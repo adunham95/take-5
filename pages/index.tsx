@@ -1,5 +1,7 @@
+import Container from '@/components/container';
 import Header from '@/components/header';
 import Head from 'next/head';
+import { Box } from 'theme-ui';
 
 export default function Home() {
   return (
@@ -12,6 +14,15 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+        <Container tx={{ px: 2, background: 'purple' }}>
+          <Box
+            sx={{
+              height: 100,
+              width: '100%',
+              background: 'green',
+            }}
+          ></Box>
+        </Container>
       </main>
     </>
   );

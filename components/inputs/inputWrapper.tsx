@@ -1,6 +1,6 @@
 import React from 'react';
 import LabelBar, { ILabelBarProps } from './labelBar';
-import { ThemeUIStyleObject } from 'theme-ui';
+import { Box, Text, ThemeUIStyleObject } from 'theme-ui';
 
 export interface IDefaultInputWrapperProps extends ILabelBarProps {
   id: string;
@@ -8,8 +8,8 @@ export interface IDefaultInputWrapperProps extends ILabelBarProps {
   helperText?: string;
   errorText?: string;
   hasError?: boolean;
-  sx?: ThemeUIStyleObject;
-  inputWrapperSX?: ThemeUIStyleObject;
+  tx?: ThemeUIStyleObject;
+  inputWrapperTX?: ThemeUIStyleObject;
 }
 
 interface IInputWrapperProps extends IDefaultInputWrapperProps {
@@ -23,38 +23,38 @@ const InputWrapper = (props: IInputWrapperProps) => {
     helperText,
     errorText,
     hasError = false,
-    sx = {},
-    inputWrapperSX = {},
+    tx = {},
+    inputWrapperTX = {},
     children,
     htmlFor,
   } = props;
   return (
-    <div sx={sx}>
+    <Box sx={tx}>
       <LabelBar htmlFor={htmlFor || id || name} {...props} />
-      <div
+      <Box
         sx={{
           mt: 2,
-          ...inputWrapperSX,
+          ...inputWrapperTX,
         }}
       >
         {children}
-      </div>
+      </Box>
       {helperText && !hasError && (
-        <p
+        <Text
           sx={{
             mt: 2,
           }}
           id={`${name || id}-description`}
         >
           {helperText}
-        </p>
+        </Text>
       )}
       {hasError && (
-        <p sx={{ mt: 2, color: 'error' }} id={`${name || id}-error`}>
+        <Text sx={{ mt: 2, color: 'error' }} id={`${name || id}-error`}>
           {errorText || 'Error'}
-        </p>
+        </Text>
       )}
-    </div>
+    </Box>
   );
 };
 

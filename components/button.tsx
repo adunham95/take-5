@@ -1,15 +1,15 @@
 import React from 'react';
-import { ThemeUIStyleObject } from 'theme-ui';
+import { ThemeUIStyleObject, Button as UIButton } from 'theme-ui';
 
 interface IProps {
   variant?: 'primary' | 'default' | 'secondary';
   children: React.ReactNode;
-  sx?: ThemeUIStyleObject;
+  tx?: ThemeUIStyleObject;
 }
 
-export const Button = ({ variant = 'default', sx = {}, ...props }: IProps) => {
+export const Button = ({ variant = 'default', tx = {}, ...props }: IProps) => {
   return (
-    <button
+    <UIButton
       {...props}
       sx={{
         appearance: 'none',
@@ -25,7 +25,7 @@ export const Button = ({ variant = 'default', sx = {}, ...props }: IProps) => {
         border: 0,
         borderRadius: 4,
         cursor: 'pointer',
-        ...sx,
+        ...tx,
         // pass variant prop to sx
         variant: `buttons.${variant}`,
       }}
