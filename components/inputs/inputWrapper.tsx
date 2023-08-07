@@ -33,7 +33,7 @@ const InputWrapper = (props: IInputWrapperProps) => {
       <LabelBar htmlFor={htmlFor || id || name} {...props} />
       <Box
         sx={{
-          mt: 2,
+          mt: 1,
           ...inputWrapperTX,
         }}
       >
@@ -42,7 +42,8 @@ const InputWrapper = (props: IInputWrapperProps) => {
       {helperText && !hasError && (
         <Text
           sx={{
-            mt: 2,
+            mt: 1,
+            variant: `textSize.xs`,
           }}
           id={`${name || id}-description`}
         >

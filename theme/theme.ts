@@ -35,6 +35,24 @@ const theme = makeTheme({
       bg: 'gray',
     },
   },
+  textSize: {
+    xs: {
+      fontSize: '0.75rem',
+      lineHeight: '1rem',
+    },
+    sm: {
+      fontSize: '0.875rem',
+      lineHeight: '1.25rem',
+    },
+    md: {
+      fontSize: '0.875rem',
+      lineHeight: '1.25rem',
+    },
+    default: {
+      fontSize: '1rem',
+      lineHeight: '1.5rem',
+    },
+  },
 });
 
 export type ExactTheme = typeof theme;

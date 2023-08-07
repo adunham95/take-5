@@ -12,19 +12,9 @@ export const Button = ({ variant = 'default', tx = {}, ...props }: IProps) => {
     <UIButton
       {...props}
       sx={{
-        appearance: 'none',
-        display: 'inline-block',
-        textAlign: 'center',
-        lineHeight: 'inherit',
-        textDecoration: 'none',
-        fontSize: 'inherit',
         fontWeight: 'bold',
-        m: 0,
-        px: 3,
-        py: 2,
-        border: 0,
-        borderRadius: 4,
         cursor: 'pointer',
+        fontFamily: 'inherit',
         ...tx,
         // pass variant prop to sx
         variant: `buttons.${variant}`,

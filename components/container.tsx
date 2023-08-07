@@ -8,7 +8,6 @@ interface IContainerProps {
 }
 
 const Container = (props: IContainerProps) => {
-  console.log(props);
   const { children } = props;
   return (
     <Box

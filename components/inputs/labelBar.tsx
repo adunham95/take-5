@@ -19,6 +19,7 @@ const LabelBar = (props: ILabelBarProps) => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
+        variant: 'textSize.sm',
         ...(LabelProps?.containerTX || {}),
       }}
     >

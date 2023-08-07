@@ -1,9 +1,11 @@
 import Container from '@/components/container';
 import Header from '@/components/header';
+import { TextInput } from '@/components/inputs/textInput';
 import Head from 'next/head';
-import { Box } from 'theme-ui';
+import { useState } from 'react';
 
 export default function Home() {
+  const [title, setTitle] = useState('');
   return (
     <>
       <Head>
@@ -12,18 +14,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Header />
-        <Container tx={{ px: 2, background: 'purple' }}>
-          <Box
-            sx={{
-              height: 100,
-              width: '100%',
-              background: 'green',
-            }}
-          ></Box>
-        </Container>
-      </main>
+      <Header />
+      <Container tx={{ px: 2 }}>
+        <TextInput
+          value={title}
+          onChange={setTitle}
+          id="title"
+          label="TItle"
+          helperText="Write a title"
+        />
+      </Container>
     </>
   );
 }
